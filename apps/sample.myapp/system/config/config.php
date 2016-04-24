@@ -15,7 +15,7 @@ $config['database'] = array(
     ,'port'     => ''
 );
 $config['cache'] = array(
-     'host'      => ''
+     'host'      => array('host1', 'host2')
     ,'user'     => ''
     ,'password' => ''
     ,'port'     => ''

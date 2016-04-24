@@ -17,9 +17,15 @@ abstract class Controller
     public function execute() {
         $sAction    = $this->sAction;
         $oView      = View::getInstance();
+        $oView->setView($this->sAction);
         if( method_exists($this, $sAction) )
         {
-            $result = $this->{$sAction}();
+            try{
+                $result = $this->{$sAction}();
+                $oView->setData(1, $result);
+            }catch(Exception $e) {
+                $oView->setData($e->getCode(), $e);
+            }
         }
         else
             $oView->setType(404);

@@ -12,8 +12,15 @@ class Router
     protected $action;
     protected $uriData;
 
-    private static function initialize() {
+    public function __construct() {
+        $this->initialize();
+    }
+
+    private function initialize() {
         //todo parse URI string
+        $this->controller = 'Index'.'Controller';
+        $this->action     = 'index';
+        define('APP_ACTION', $this->action);
         define('APP_CTRL_DIR','');
     }
 
@@ -21,7 +28,6 @@ class Router
      * @return mixed
      */
     public function dispatch() {
-        self::initialize();
         return new $this->controller($this->action);
     }
 

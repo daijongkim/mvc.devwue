@@ -11,9 +11,15 @@ class View extends Singleton
     protected $sType;
     protected $nCode;
     protected $aData;
+    protected $sViewFile;
+    protected $basedir;
 
     public function __construct() {
         
+    }
+
+    public function setView($sView) {
+        $this->sViewFile = $sView;
     }
     public function setType($sType='json') {
         $this->sType = $sType;
@@ -52,6 +58,10 @@ class View extends Singleton
 
     private function printHtml() {
         extract($this->aData);
-        include APP_ROOT.DS.'views'.DS.APP_CTRL_DIR.DS.APP_ACTION.APP_VIEW_EXT;
+        $file = APP_ROOT.DS.'views'.DS.$this->sViewFile.APP_VIEW_EXT;
+        if( file_exists($file) )
+            include $file;
+        else
+            $this->print404();
     }
 }

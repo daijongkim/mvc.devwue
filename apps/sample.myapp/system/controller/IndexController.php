@@ -8,5 +8,7 @@
  */
 class IndexController extends Controller
 {
-
+    protected function index() {
+        return array('title' => 'welcome', 'body' => 'hello world');
+    }
 }
