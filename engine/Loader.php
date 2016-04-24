@@ -10,13 +10,15 @@ class Loader
 {
     private static $files = array();
 
-    public function __construct($paths=array()) {
+    public function     __construct($paths=array()) {
         self::setLoader();
         self::setPath(array(
-             ENGINE_ROOT
-            ,APP_ROOT
+             ENGINE_ROOT.DS.'engine'
+            ,ENGINE_ROOT.DS.'models'
+            ,ENGINE_ROOT.DS.'services'
+            ,ENGINE_ROOT.DS.'vender'
+            ,APP_ROOT.DS.'system'
         ));
-
     }
 
     public static function getLoadedFiles() {

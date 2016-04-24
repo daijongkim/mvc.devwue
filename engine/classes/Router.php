@@ -11,8 +11,9 @@ class Router
     protected $controller;
     protected $action;
     protected $uriData;
+    protected static $loader;
 
-    public function __construct() {
+    public function __construct($paths = array()) {
         $this->initialize();
     }
 

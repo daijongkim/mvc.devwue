@@ -5,9 +5,15 @@
  * Date: 2016-04-23
  * Time: 오후 12:15
  */
+error_reporting(E_ALL);
+ini_set('display_errors','On');
+
 $view_ext = '.html';
+$config['include_path'] = array(
+    
+);
 $config['database'] = array(
-    'master'    => ''
+     'master'   => ''
     ,'slave'    => ''
     ,'user'     => ''
     ,'password' => ''
@@ -15,7 +21,7 @@ $config['database'] = array(
     ,'port'     => ''
 );
 $config['cache'] = array(
-     'host'      => array('host1', 'host2')
+     'host'     => array('host1', 'host2')
     ,'user'     => ''
     ,'password' => ''
     ,'port'     => ''
