@@ -12,6 +12,7 @@ class Login extends SampleServices
     public function __construct() {
         $this->user = UserDao::getInstance();
     }
+    
     public function login() {
         
     }

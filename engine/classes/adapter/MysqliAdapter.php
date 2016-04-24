@@ -6,7 +6,7 @@
  * Date: 2016-04-23
  * Time: 오후 1:55
  */
-class MysqliAdapter implements DBAdapter
+class MysqliAdapter extends Singleton implements DBAdapter
 {
     public function connect($config) {
 

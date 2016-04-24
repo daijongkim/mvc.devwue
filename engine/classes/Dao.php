@@ -9,7 +9,8 @@
 class Dao extends Singleton
 {
     protected static $db;
-    public function __construct(DBAdapter $adapter) {
+    public function __construct(DBAdapter $adapter, Dto $config) {
         self::$db = $adapter;
+        self::$db->connect($config);
     }
 }

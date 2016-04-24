@@ -6,5 +6,4 @@
  * Time: 오후 12:12
  */
 define('APP_ROOT', dirname(__FILE__));
-
 require_once "engine/bootstrap.php";

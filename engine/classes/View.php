@@ -6,12 +6,15 @@
  * Date: 2016-04-23
  * Time: 오후 12:43
  */
-class View
+class View extends Singleton
 {
     protected $sType;
     protected $nCode;
     protected $aData;
 
+    public function __construct() {
+        
+    }
     public function setType($sType='json') {
         $this->sType = $sType;
     }
@@ -37,7 +40,7 @@ class View
     }
 
     private function print404() {
-
+        echo 'file not found';
     }
     
     private function printXml() {

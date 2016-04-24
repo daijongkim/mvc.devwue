@@ -14,14 +14,15 @@ abstract class Controller
         $this->sAction = $sAction;
     }
 
-    public function execute()
-    {
+    public function execute() {
         $sAction    = $this->sAction;
-        $oView      = new View();
+        $oView      = View::getInstance();
         if( method_exists($this, $sAction) )
         {
             $result = $this->{$sAction}();
         }
+        else
+            $oView->setType(404);
 
         $oView->render($result);
     }
